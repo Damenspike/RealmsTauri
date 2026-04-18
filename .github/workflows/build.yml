@@ -7,16 +7,17 @@ on:
 
 jobs:
   build:
+	runs-on: ${{ matrix.platform }}
+
 	strategy:
 	  matrix:
 		platform:
 		  - macos-latest
 		  - windows-latest
 
-	runs-on: ${{ matrix.platform }}
-
 	steps:
-	  - uses: actions/checkout@v4
+	  - name: Checkout
+		uses: actions/checkout@v4
 
 	  - name: Setup Node
 		uses: actions/setup-node@v4
