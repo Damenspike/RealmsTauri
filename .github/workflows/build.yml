@@ -2,39 +2,39 @@ name: Build Tauri App
 
 on:
   push:
-    branches:
-      - main
+	branches:
+	  - main
 
 jobs:
   build:
-    runs-on: ${{ matrix.platform }}
+	runs-on: \${{ matrix.platform }}
 
-    strategy:
-      matrix:
-        platform:
-          - macos-latest
-          - windows-latest
+	strategy:
+	  matrix:
+		platform:
+		  - macos-latest
+		  - windows-latest
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+	steps:
+	  - name: Checkout
+		uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
+	  - name: Setup Node
+		uses: actions/setup-node@v4
+		with:
+		  node-version: 18
 
-      - name: Install Rust
-        uses: dtolnay/rust-toolchain@stable
+	  - name: Install Rust
+		uses: dtolnay/rust-toolchain@stable
 
-      - name: Install dependencies
-        run: npm install
+	  - name: Install dependencies
+		run: npm install
 
-      - name: Build Tauri
-        run: npm run tauri build
+	  - name: Build Tauri
+		run: npm run tauri build
 
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: tauri-${{ matrix.platform }}
-          path: src-tauri/target/release/bundle/
+	  - name: Upload artifacts
+		uses: actions/upload-artifact@v4
+		with:
+		  name: tauri-\${{ matrix.platform }}
+		  path: src-tauri/target/release/bundle/
