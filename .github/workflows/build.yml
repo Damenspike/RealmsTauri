@@ -3,12 +3,15 @@ name: Build Tauri App
 on:
   push:
 	branches:
-		- main
+	  - main
+
 jobs:
   build:
 	strategy:
 	  matrix:
-		platform: [macos-latest, windows-latest]
+		platform:
+		  - macos-latest
+		  - windows-latest
 
 	runs-on: ${{ matrix.platform }}
 
