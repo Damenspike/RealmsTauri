@@ -1,6 +1,6 @@
 name: Build Tauri App
 
-"on":
+on:
   push:
 	branches:
 	  - main
