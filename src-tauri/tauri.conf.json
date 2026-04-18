@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Realms",
+  "version": "0.1.0",
+  "identifier": "com.drakehall.realms",
+  "build": {
+    "frontendDist": "../src"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "title": "Realms",
+        "width": 912,
+        "height": 576,
+        "fullscreen": true,
+        "resizable": true,
+        "decorations": false,
+        "url": "https://realms3d.com/fullscreen/"
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "macOS": {
+      "signingIdentity": "Developer ID Application: VELO PRO RACER LTD (3JWXCFP9HB)",
+      "hardenedRuntime": true
+    },
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}

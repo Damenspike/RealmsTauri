@@ -1,0 +1,17 @@
+{
+  "name": "realms",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "tauri": "tauri",
+  "tauri:build": "node -r dotenv/config node_modules/.bin/tauri build",
+  "tauri:dev": "node -r dotenv/config node_modules/.bin/tauri dev"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
+}
